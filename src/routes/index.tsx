@@ -26,11 +26,24 @@ function HomePage() {
             <br />
             Masters
           </h1>
-          <p className="max-w-md text-center text-base text-neutral-400 md:text-lg">
-            Vi konkurrerer i Norgesmesterskapet i kunstig intelligens.
-            <br />
-            Raskere enn en Black Mamba. Smartere enn en Transformer.
-          </p>
+          <div className="flex max-w-lg flex-col items-center gap-4">
+            <p className="text-center text-sm tracking-wide text-neutral-500 uppercase">
+              Norgesmesterskapet i kunstig intelligens
+            </p>
+            <p className="text-center text-lg font-medium leading-relaxed text-neutral-300 md:text-xl">
+              Raskere enn en{" "}
+              <span className="font-semibold text-mamba-green">
+                Black Mamba
+              </span>
+              .
+              <br />
+              Smartere enn en{" "}
+              <span className="font-semibold text-mamba-green">
+                Transformer
+              </span>
+              .
+            </p>
+          </div>
         </div>
 
         {/* Countdown */}
