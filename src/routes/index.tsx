@@ -21,7 +21,7 @@ function HomePage() {
 
         {/* Team name */}
         <div className="flex flex-col items-center gap-3">
-          <h1 className="text-glow-green text-center text-5xl font-black uppercase tracking-tight text-mamba-toxic sm:text-6xl md:text-8xl lg:text-9xl">
+          <h1 className="text-glow-green text-center text-7xl font-black uppercase tracking-tight text-mamba-toxic sm:text-8xl md:text-8xl lg:text-9xl">
             Mamba
             <br />
             Masters
