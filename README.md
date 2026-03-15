@@ -1,21 +1,50 @@
-# TanStack Start + shadcn/ui
+# Mamba Masters
 
-This is a template for a new TanStack Start project with React, TypeScript, and shadcn/ui.
+Team website for **Mamba Masters** competing in the Norwegian Championship in AI ([ainm.no](https://ainm.no)) 2026.
 
-## Adding components
+Live at [mambamasters.no](https://mambamasters.no)
 
-To add components to your app, run the following command:
+## Stack
+
+- **TanStack Start** (SPA mode) + React 19
+- **Tailwind CSS v4** + shadcn/ui (Radix Nova)
+- **OXC** (oxlint + oxfmt) for linting/formatting
+- **Vite 7** + Nitro for build/deploy
+- **Bun** as runtime and package manager
+
+## Development
 
 ```bash
-npx shadcn@latest add button
+bun install
+bun run dev        # http://localhost:3000
 ```
 
-This will place the ui components in the `components` directory.
+## Scripts
 
-## Using components
+| Command              | Description            |
+| -------------------- | ---------------------- |
+| `bun run dev`        | Start dev server       |
+| `bun run build`      | Production build       |
+| `bun run preview`    | Preview production     |
+| `bun run lint`       | Lint with oxlint       |
+| `bun run format`     | Format with oxfmt      |
+| `bun run format:check` | Check formatting     |
+| `bun run typecheck`  | TypeScript check       |
 
-To use the components in your app, import them as follows:
+## Adding shadcn components
 
-```tsx
-import { Button } from "@/components/ui/button"
+```bash
+bunx shadcn@latest add <component>
 ```
+
+## Backlog
+
+- [ ] Team members section (photos, names, roles)
+- [ ] About / what is AINM explainer
+- [ ] Blog/updates feed
+- [ ] Contact or join form
+- [ ] Social links (GitHub, LinkedIn, Discord)
+- [ ] Open Graph meta tags for social sharing
+- [ ] Page transitions / scroll animations
+- [ ] Easter egg (konami code, hidden snake game)
+- [ ] Live competition stats during the event
