@@ -40,30 +40,21 @@ export function CompetitionCountdown() {
         const values = [days, hours, minutes, seconds]
 
         return (
-          <div className="flex flex-col items-center gap-2">
-            {/* Numbers row */}
-            <div className="flex items-center gap-2 sm:gap-3 md:gap-5">
-              {values.map((v, i) => (
-                <div
-                  key={labels[i]}
-                  className="flex items-center gap-2 sm:gap-3 md:gap-5"
-                >
+          <div className="flex items-end gap-2 sm:gap-3 md:gap-5">
+            {values.map((v, i) => (
+              <div
+                key={labels[i]}
+                className="flex items-center gap-2 sm:gap-3 md:gap-5"
+              >
+                <div className="flex flex-col items-center gap-2">
                   <NumberBox value={v} />
-                  {i < 3 && <Separator />}
+                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-mamba-green/60 sm:text-xs sm:tracking-[0.25em]">
+                    {labels[i]}
+                  </span>
                 </div>
-              ))}
-            </div>
-            {/* Labels row */}
-            <div className="flex w-full">
-              {labels.map((label) => (
-                <div
-                  key={label}
-                  className="flex-1 text-center text-[10px] font-bold uppercase tracking-[0.2em] text-mamba-green/60 sm:text-xs sm:tracking-[0.25em]"
-                >
-                  {label}
-                </div>
-              ))}
-            </div>
+                {i < 3 && <Separator />}
+              </div>
+            ))}
           </div>
         )
       }}
