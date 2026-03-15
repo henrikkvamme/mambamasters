@@ -1,7 +1,9 @@
-import { HeadContent, Scripts, createRootRoute } from "@tanstack/react-router"
+/// <reference types="vite/client" />
+import { Outlet, HeadContent, Scripts, createRootRoute } from "@tanstack/react-router"
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools"
 import { TanStackDevtools } from "@tanstack/react-devtools"
 
+import { SnakeSpotlight } from "@/components/snake-spotlight"
 import appCss from "../styles.css?url"
 
 export const Route = createRootRoute({
@@ -15,7 +17,12 @@ export const Route = createRootRoute({
         content: "width=device-width, initial-scale=1",
       },
       {
-        title: "TanStack Start Starter",
+        title: "Mamba Masters — NM i AI 2026",
+      },
+      {
+        name: "description",
+        content:
+          "Mamba Masters competing in the Norwegian Championship in AI (AINM) 2026",
       },
     ],
     links: [
@@ -25,30 +32,40 @@ export const Route = createRootRoute({
       },
     ],
   }),
+  component: RootComponent,
   shellComponent: RootDocument,
 })
 
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="no" className="dark">
       <head>
         <HeadContent />
       </head>
-      <body>
+      <body className="snake-scales min-h-svh antialiased">
         {children}
-        <TanStackDevtools
-          config={{
-            position: "bottom-right",
-          }}
-          plugins={[
-            {
-              name: "Tanstack Router",
-              render: <TanStackRouterDevtoolsPanel />,
-            },
-          ]}
-        />
         <Scripts />
       </body>
     </html>
+  )
+}
+
+function RootComponent() {
+  return (
+    <>
+      <SnakeSpotlight />
+      <Outlet />
+      <TanStackDevtools
+        config={{
+          position: "bottom-right",
+        }}
+        plugins={[
+          {
+            name: "Tanstack Router",
+            render: <TanStackRouterDevtoolsPanel />,
+          },
+        ]}
+      />
+    </>
   )
 }
