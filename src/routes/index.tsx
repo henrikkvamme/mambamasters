@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router"
+import { useEffect, useState } from "react"
 import { CompetitionCountdown } from "@/components/countdown"
 
 export const Route = createFileRoute("/")({ component: HomePage })
@@ -26,18 +27,22 @@ function HomePage() {
             <br />
             Masters
           </h1>
-          <p className="max-w-md text-center text-base leading-relaxed text-neutral-400 md:text-lg">
-            Raskere enn en <span className="text-neutral-300">Black Mamba</span>.
+          <p className="max-w-md text-center text-base leading-relaxed text-neutral-500 md:text-lg">
+            Raskere enn en <span className="font-semibold text-mamba-toxic/80">Black Mamba</span>.
             <br />
-            Smartere enn en <span className="text-neutral-300">Transformer</span>.
+            Smartere enn en <span className="font-semibold text-mamba-toxic/80">Transformer</span>.
           </p>
         </div>
 
         {/* Countdown */}
         <div className="flex flex-col items-center gap-4">
-          <p className="text-sm font-medium uppercase tracking-[0.2em] text-neutral-500">
-            Konkurransen starter om
-          </p>
+          <div className="flex w-full items-center gap-4">
+            <div className="h-px flex-1 bg-gradient-to-r from-transparent to-mamba-toxic/20" />
+            <p className="text-sm font-medium uppercase tracking-[0.2em] text-mamba-green/50">
+              Konkurransen starter om
+            </p>
+            <div className="h-px flex-1 bg-gradient-to-l from-transparent to-mamba-toxic/20" />
+          </div>
           <CompetitionCountdown />
         </div>
 
