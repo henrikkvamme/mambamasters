@@ -48,7 +48,7 @@ export function CompetitionCountdown() {
               >
                 <div className="flex flex-col items-center gap-2">
                   <NumberBox value={v} />
-                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-mamba-green/60 sm:text-xs sm:tracking-[0.25em]">
+                  <span className="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-mamba-green/60 sm:text-xs sm:tracking-[0.25em]">
                     {labels[i]}
                   </span>
                 </div>
