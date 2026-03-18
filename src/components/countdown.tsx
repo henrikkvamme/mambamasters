@@ -1,7 +1,7 @@
 import Countdown from "react-countdown"
 import NumberFlow from "@number-flow/react"
 
-const COMPETITION_START = new Date("2026-03-19T16:00:00+01:00")
+const COMPETITION_START = new Date("2026-03-19T18:00:00+01:00")
 
 function NumberBox({ value }: { value: number }) {
   return (
