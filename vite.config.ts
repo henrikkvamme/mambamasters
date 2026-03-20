@@ -39,7 +39,13 @@ const config = defineConfig({
   plugins: [
     ainmProxy(),
     devtools(),
-    nitro(),
+    nitro({
+      routeRules: {
+        "/api/ainm/**": {
+          proxy: "https://api.ainm.no/**",
+        },
+      },
+    }),
     viteTsConfigPaths({
       projects: ["./tsconfig.json"],
     }),
