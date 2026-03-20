@@ -1,7 +1,7 @@
 import Countdown from "react-countdown"
 import NumberFlow from "@number-flow/react"
 
-const COMPETITION_START = new Date("2026-03-19T18:00:00+01:00")
+const COMPETITION_END = new Date("2026-03-22T15:00:00+01:00")
 
 function NumberBox({ value }: { value: number }) {
   return (
@@ -26,12 +26,12 @@ function Separator() {
 export function CompetitionCountdown() {
   return (
     <Countdown
-      date={COMPETITION_START}
+      date={COMPETITION_END}
       renderer={({ days, hours, minutes, seconds, completed }) => {
         if (completed) {
           return (
             <div className="text-glow-green text-center text-3xl font-black text-mamba-toxic sm:text-4xl md:text-5xl">
-              COMPETITION IS LIVE
+              KONKURRANSEN ER OVER
             </div>
           )
         }

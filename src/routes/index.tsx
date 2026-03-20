@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router"
+import { createFileRoute, Link } from "@tanstack/react-router"
 import { useEffect, useState } from "react"
 import { CompetitionCountdown } from "@/components/countdown"
 
@@ -97,9 +97,17 @@ function HomePage() {
       {/* Hero content */}
       <div className="relative z-[2] flex flex-col items-center gap-6 sm:gap-10">
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 rounded-full border border-mamba-toxic/20 bg-mamba-surface/60 px-4 py-1.5 text-sm backdrop-blur-sm">
-          <span className="inline-block h-2 w-2 animate-pulse rounded-full bg-mamba-toxic" />
-          <span className="font-mono text-mamba-green">NM i AI 2026 — ainm.no</span>
+        <div className="flex items-center gap-3">
+          <div className="inline-flex items-center gap-2 rounded-full border border-mamba-toxic/20 bg-mamba-surface/60 px-4 py-1.5 text-sm backdrop-blur-sm">
+            <span className="inline-block h-2 w-2 animate-pulse rounded-full bg-mamba-toxic" />
+            <span className="font-mono text-mamba-green">NM i AI 2026 — ainm.no</span>
+          </div>
+          <Link
+            to="/tripletex"
+            className="inline-flex items-center gap-1.5 rounded-full border border-mamba-toxic/20 bg-mamba-surface/60 px-3 py-1.5 font-mono text-xs text-mamba-green/70 backdrop-blur-sm transition-colors hover:border-mamba-toxic/40 hover:text-mamba-toxic"
+          >
+            Dashboard &rarr;
+          </Link>
         </div>
 
         {/* Team name */}
@@ -117,7 +125,7 @@ function HomePage() {
           <div className="flex w-full items-center gap-4">
             <div className="h-px flex-1 bg-gradient-to-r from-transparent to-mamba-toxic/20" />
             <p className="font-mono text-sm font-medium uppercase tracking-[0.2em] text-mamba-green/50">
-              Konkurransen starter om
+              Konkurransen slutter om
             </p>
             <div className="h-px flex-1 bg-gradient-to-l from-transparent to-mamba-toxic/20" />
           </div>

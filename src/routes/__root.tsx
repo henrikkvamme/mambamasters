@@ -2,8 +2,10 @@
 import { Outlet, HeadContent, Scripts, createRootRoute } from "@tanstack/react-router"
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools"
 import { TanStackDevtools } from "@tanstack/react-devtools"
+import { QueryClientProvider } from "@tanstack/react-query"
 
 import { SnakeSpotlight } from "@/components/snake-spotlight"
+import { queryClient } from "@/lib/query-client"
 import appCss from "../styles.css?url"
 
 export const Route = createRootRoute({
@@ -73,7 +75,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 
 function RootComponent() {
   return (
-    <>
+    <QueryClientProvider client={queryClient}>
       <SnakeSpotlight />
       <Outlet />
       <TanStackDevtools
@@ -87,6 +89,6 @@ function RootComponent() {
           },
         ]}
       />
-    </>
+    </QueryClientProvider>
   )
 }
